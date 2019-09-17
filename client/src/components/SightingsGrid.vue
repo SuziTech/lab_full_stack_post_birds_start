@@ -4,7 +4,7 @@
 			<h2>{{ sighting.species }}</h2>
 			<p>{{ sighting.location }} on {{ sighting.date|format }}</p>
 
-			<button type="button" v-on:click="deleteSighting">Delete Sighting</button>
+			<button type="button" v-on:click="deleteSighting(sighting._id)">Delete Sighting</button>
 		</div>
 	</div>
 </template>
@@ -26,7 +26,7 @@ export default {
 		eventBus.$on('sighting-added', (sighting) => {
 			this.sightings.push(sighting)
 
-			
+
 		})
 
 	}
